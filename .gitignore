@@ -61,7 +61,6 @@ typings/
 .next
 
 temp
-spider
 screenshots/*.png
 
 text/output/
