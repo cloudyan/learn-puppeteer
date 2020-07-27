@@ -25,7 +25,7 @@ const puppeteer = require('puppeteer');
 `npm i puppeteer-core` 在安装时不会自动下载 Chromium。参见 ./spider/index.js
 
 学习Puppeteer
-
+- https://github.com/puppeteer/examples
 - http://csbun.github.io/blog/2017/09/puppeteer/
 - https://github.com/chenxiaochun/blog/issues/38
 - https://github.com/zhentaoo/puppeteer-deep
