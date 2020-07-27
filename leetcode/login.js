@@ -1,11 +1,40 @@
 
 
 // 账号密码登录
+// https://leetcode-cn.com/accounts/login/
+
 export async function login(page, obj) {
-  await page.goto('https://github.com', {
+  const url = `${obj.origin}${obj.pathname}`;
+  console.log('open ', url)
+  await page.goto(url, {
     // networkIdleTimeout: 5000,
     // waitUntil: 'networkidle',
     timeout: 0
   });
-  await page.screenshot({path: './screenshots/github2.png'});
+
+  await page.click('[data-cypress="sign-in-with-password"]');
+  await page.$eval('[placeholder="手机号/邮箱"]',(el, val) => {
+    el.value = val
+    return el.value
+  }, obj.user)
+  await page.$eval('[placeholder="输入密码"]',(el, val) => {
+    el.value = val
+    return el.value
+  }, obj.pwd)
+
+  const user = await page.$eval('[placeholder="手机号/邮箱"]',(el, val) => {
+    return el.value
+  })
+  const pwd = await page.$eval('[placeholder="输入密码"]',(el, val) => {
+    return el.value
+  })
+
+  console.log(user, pwd)
+
+
+  await page.waitFor(1000)
+  await page.click('button[type="submit"]')
+  await page.waitFor(1000)
+
+  await page.screenshot({path: './leetcode/screenshots/leetcode.png'});
 }
