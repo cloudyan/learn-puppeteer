@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "leetcode": "babel-node ./leetcode/index.js",
     "dev1": "node ./spider/index.js",
     "text": "node ./text/index.js",
     "qa1": "npx babel-node --inspect ./qa/index.js",
