@@ -2,7 +2,7 @@ const path = require('path')
 const puppeteer = require('puppeteer-core');
 // const devices = require('puppeteer/DeviceDescriptors');
 
-async function run() {
+export default async function run(callback) {
   const browser = await puppeteer.launch({
     // headless: false
     executablePath: path.resolve('/Applications/Chromium.app/Contents/MacOS/Chromium')
@@ -22,19 +22,16 @@ async function run() {
   ]);
   // await page.emulate(devices['iPhone 6']);
 
-  await page.goto('https://github.com', {
-    // networkIdleTimeout: 5000,
-    // waitUntil: 'networkidle',
-    timeout: 0
-  });
-  await page.screenshot({path: 'screenshots/github2.png'});
+  await callback(page);
+
+  // await page.goto('https://github.com', {
+  //   // networkIdleTimeout: 5000,
+  //   // waitUntil: 'networkidle',
+  //   timeout: 0
+  // });
+  // await page.screenshot({path: 'screenshots/github2.png'});
 
   console.log('success')
   browser.close();
 }
 
-try {
-  run();
-} catch (err) {
-  console.log(err);
-}
