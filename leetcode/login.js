@@ -22,19 +22,11 @@ export async function login(page, obj) {
     return el.value
   }, obj.pwd)
 
-  const user = await page.$eval('[placeholder="手机号/邮箱"]',(el, val) => {
-    return el.value
-  })
-  const pwd = await page.$eval('[placeholder="输入密码"]',(el, val) => {
-    return el.value
-  })
+  // console.log(user, pwd)
 
-  console.log(user, pwd)
-
-
-  await page.waitFor(1000)
-  await page.click('button[type="submit"]')
-  await page.waitFor(1000)
+  // await page.waitFor(1000)
+  // await page.click('button[type="submit"]')
+  await page.waitFor(10000)
 
   await page.screenshot({path: './leetcode/screenshots/leetcode.png'});
 }

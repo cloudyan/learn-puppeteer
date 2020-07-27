@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer-core');
 
 export default async function run(callback) {
   const browser = await puppeteer.launch({
-    // headless: false
+    headless: false,
     executablePath: path.resolve('/Applications/Chromium.app/Contents/MacOS/Chromium')
   });
   const page = await browser.newPage();
@@ -32,6 +32,6 @@ export default async function run(callback) {
   // await page.screenshot({path: 'screenshots/github2.png'});
 
   console.log('success')
-  browser.close();
+  // browser.close();
 }
 
