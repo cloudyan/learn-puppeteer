@@ -5,5 +5,5 @@ export default {
   page: '',
   rules: [],
   user: '1395093509@qq.com',
-  pwd: 'xxx',
+  pwd: '142857qw',
 }
