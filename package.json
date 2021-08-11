@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "mpaas": "node ./mpaas/index.js",
     "leetcode": "babel-node ./leetcode/index.js",
     "dev1": "node ./spider/index.js",
     "text": "node ./text/index.js",
@@ -11,7 +12,6 @@
   "dependencies": {
     "fs-extra": "^8.1.0",
     "mongoose": "^5.5.11",
-    "puppeteer": "^3.0.4",
     "puppeteer-core": "^1.20.0"
   },
   "devDependencies": {
