@@ -6,10 +6,12 @@
     "text": "node ./text/index.js",
     "qa1": "npx babel-node --inspect ./qa/index.js",
     "qa": "npx babel-node ./qa/index.js",
+    "chrome": "node ./launch-chrome/index.js",
     "cpu": "babel-node ./cpu/index.js",
     "dev": "node ./demo/index.js"
   },
   "dependencies": {
+    "chrome-launcher": "0.15.0",
     "fs-extra": "^8.1.0",
     "mongoose": "^5.5.11",
     "puppeteer-core": "^1.20.0"
@@ -41,5 +43,20 @@
     "rimraf": "^2.6.3",
     "typescript": "^3.2.4",
     "yorkie": "^2.0.0"
-  }
+  },
+  "name": "learn-puppeteer",
+  "description": "## Puppeteer 是什么",
+  "version": "1.0.0",
+  "main": ".babelrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudyan/learn-puppeteer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudyan/learn-puppeteer/issues"
+  },
+  "homepage": "https://github.com/cloudyan/learn-puppeteer#readme"
 }
